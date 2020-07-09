@@ -2,8 +2,8 @@
 cd /opt/frp
 
 if [ -z $SERVER ] ; then
-	frpc -c frpc.ini
+	./frpc -c ./frpc.ini
 else
-	frps -c frps.ini
+	./frps -c ./frps.ini
 fi
 
