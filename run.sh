@@ -1,4 +1,5 @@
 #!/bin/sh
+cd /opt/frp
 
 if [ -z $SERVER ] ; then
 	frpc -c frpc.ini
