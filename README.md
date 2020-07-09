@@ -2,3 +2,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # docker-frp
 Docker images for frp.
+
+Private image. Do NOT use.
+
