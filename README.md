@@ -54,3 +54,5 @@ services:
                 volumes:
                         - ./config/frps.ini:/opt/frp/frps.ini
 ```
+# Troubleshooting
+The logs can be obtained by `docker logs <container_name>`. They are usually very self-explanatory.
