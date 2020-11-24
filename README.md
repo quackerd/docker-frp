@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://ci.quacker.org/api/badges/d/docker-frp/status.svg)](https://ci.quacker.org/d/docker-frp)
-[![Version](https://img.shields.io/static/v1?label=Version&message=0.34.2&color=red)](https://github.com/fatedier/frp)
+[![Version](https://img.shields.io/static/v1?label=Version&message=0.34.3&color=red)](https://github.com/fatedier/frp)
 
 # docker-frp
 Docker image for frp. Binaries directly obtained from the official frp repo [fatedier/frp](https://github.com/fatedier/frp).
