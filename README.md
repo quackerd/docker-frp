@@ -8,7 +8,6 @@ Docker image for frp. Binaries directly obtained from the official frp repo [fat
 The instructions below apply to `docker-compose`.
 
 # Networking
-
 We recommend using the `network_mode = host` (host network) option.
 Otherwise you would need to manually expose the listening port as well as all the reverse proxied ports. 
 
