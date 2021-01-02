@@ -13,8 +13,7 @@ steps:
   - name: tag
     image: alpine
     commands:
-      - echo -n "$FRP_VERSION,0.1.0" > .tags
-      - echo "$FRP_VERSION"
+      - echo -n "$FRP_VERSION,latest" > .tags
 
   - name: publish
     image: plugins/docker
