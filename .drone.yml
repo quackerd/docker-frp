@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: default
+name: Docker image build
 
 trigger:
   branch:
@@ -10,12 +10,13 @@ environment:
   FRP_VERSION: 0.34.3
 
 steps:
-  - name: tag
+  - name: config
     image: alpine
     commands:
       - echo -n "$FRP_VERSION,latest" > .tags
+      - sed -i -E "s/var_FRP_VERSION/$FRP_VERSION/" Dockerfile
 
-  - name: publish
+ - name: build
     image: plugins/docker
     settings:
       username:
@@ -23,5 +24,3 @@ steps:
       password:
         from_secret: docker_password
       repo: quackerd/private_test
-      build_args_from_env:
-        - FRP_VERSION=$FRP_VERSION
