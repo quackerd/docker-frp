@@ -5,7 +5,7 @@
 
 FROM alpine
 
-ENV FRP_VERSION 0.34.3
+ARG FRP_VERSION
 ENV FRP_URL https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_amd64.tar.gz
 
 WORKDIR /opt/frp

@@ -4,15 +4,22 @@ name: default
 
 trigger:
   branch:
-    - master
+    - test
+
+environment:
+  FRP_VERSION: 0.34.3
 
 steps:
-  - name: build
+  - name: tag
+    image: alpine
+    commands:
+      - echo -n "$FRP_VERSION,0.1.0" > .tags
+
+  - name: publish
     image: plugins/docker
     settings:
       username:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      repo: quackerd/frp
-      tags: latest
+      repo: quackerd/private_test
