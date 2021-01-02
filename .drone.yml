@@ -15,8 +15,7 @@ steps:
     commands:
       - echo -n "$FRP_VERSION,latest" > .tags
       - sed -i -E "s/var_FRP_VERSION/$FRP_VERSION/" Dockerfile
-
- - name: build
+  - name: build
     image: plugins/docker
     settings:
       username:
