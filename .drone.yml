@@ -4,10 +4,10 @@ name: Docker image build
 
 trigger:
   branch:
-    - test
+    - master
 
 environment:
-  FRP_VERSION: 0.34.2
+  FRP_VERSION: 0.34.3
 
 steps:
   - name: config
@@ -22,4 +22,4 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      repo: quackerd/private_test
+      repo: quackerd/docker-frp
