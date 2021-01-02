@@ -14,6 +14,7 @@ steps:
     image: alpine
     commands:
       - echo -n "$FRP_VERSION,0.1.0" > .tags
+      - echo "$FRP_VERSION"
 
   - name: publish
     image: plugins/docker
