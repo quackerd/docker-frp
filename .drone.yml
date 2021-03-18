@@ -7,7 +7,7 @@ trigger:
     - master
 
 environment:
-  FRP_VERSION: 0.36.0
+  FRP_VERSION: 0.36.1
 
 steps:
   - name: config
