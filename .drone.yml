@@ -6,15 +6,13 @@ trigger:
   branch:
     - master
 
-environment:
-  FRP_VERSION: 0.43.0
-
 steps:
   - name: config
     image: alpine
     commands:
-      - echo -n "$FRP_VERSION,latest" > .tags
-      - sed -i -E "s/var_FRP_VERSION/$FRP_VERSION/" Dockerfile
+      - VER=$(curl -sL https://api.github.com/repos/fatedier/frp/releases/latest | jq -r ".tag_name")
+      - echo -n "$VER,latest" > .tags
+      - sed -i -E "s/var_FRP_VERSION/$VER/" Dockerfile
   - name: build
     image: plugins/docker
     settings:
