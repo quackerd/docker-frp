@@ -10,6 +10,7 @@ steps:
   - name: config
     image: alpine
     commands:
+      - apk add --no-cache jq curl
       - VER=$(curl -sL https://api.github.com/repos/fatedier/frp/releases/latest | jq -r ".tag_name")
       - echo -n "$VER,latest" > .tags
       - sed -i -E "s/var_FRP_VERSION/$VER/" Dockerfile
