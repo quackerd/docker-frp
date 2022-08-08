@@ -12,12 +12,8 @@ steps:
     commands:
       - sh tag.sh
   - name: build
-    image: thegeeklab/drone-docker-buildx
-    privileged: true
+    image: plugins/docker
     settings:
-      platforms:
-        - linux/arm64
-        - linux/amd64
       username:
         from_secret: docker_username
       password:
