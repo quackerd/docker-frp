@@ -53,9 +53,8 @@ jobs:
           push: true
           no-cache: true
           pull: true
-          cleanup: true
-          keep-state: false
           targets: default
+          source: .
 
       - name: Clean Up
         if: always() 
