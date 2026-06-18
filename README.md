@@ -15,4 +15,4 @@ Either use `network_mode = host` or manually expose the listening port as well a
 Bind mount a host folder to `/config`. Make sure the folder is owned by `1000:1000`. Both server and client mode use the same `/config/config.toml` config file.
 
 # Troubleshooting
-The logs can be obtained by `docker compose logs <container_name>`. They are usually very self-explanatory.
+The logs can be obtained by `docker logs <container_name>`. They are usually very self-explanatory.
