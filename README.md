@@ -1,6 +1,7 @@
+# docker-frp
+
 [![Build](https://git.quacker.org/d/docker-frp/badges/workflows/build.yaml/badge.svg?branch=master&label=build)](https://git.quacker.org/d/docker-frp/actions)
 
-# docker-frp
 Docker image for frp. Binaries directly obtained from the official frp repo [fatedier/frp](https://github.com/fatedier/frp). Automatic weekly builds. You can start with the sample `docker-compose.yml` in this repo.
 
 # Networking
