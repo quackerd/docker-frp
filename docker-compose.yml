@@ -1,0 +1,25 @@
+name: frp
+
+networks:
+  br-frp:
+    driver: bridge
+    external: false
+
+services:
+  service:
+    image: docker.io/quackerd/frp:latest
+    restart: unless-stopped
+    networks:
+      br-frp:
+        aliases:
+          - frp
+    # or use host network below
+    # network_mode: host
+    environment:
+      SERVER: "yes" # change to "no" for client mode
+    volumes:
+      - ./config:/config:ro # make sure this folder is owned by 1000:1000
+    ports:
+      - "7000:7000/tcp"
+      # plus reverse proxied ports
+

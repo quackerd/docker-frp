@@ -1,9 +1,10 @@
 #!/bin/sh
-cd /opt/frp
+set -euo pipefail
 
-if [ -z $SERVER ] ; then
-	exec ./frpc -c ./frpc.ini
+if [ "${SERVER:-no}" = "yes" ]; then
+	echo "Running in SERVER mode..."
+    exec /opt/frp/frps -c /config/config.toml
 else
-	exec ./frps -c ./frps.ini
+	echo "Running in CLIENT mode..."
+    exec /opt/frp/frpc -c /config/config.toml
 fi
-

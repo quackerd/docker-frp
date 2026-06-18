@@ -1,0 +1,59 @@
+name: Build and Publish
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "LICENSE"
+      - "README.md"
+      - "docker-compose.yml"
+
+  schedule:
+    # Every Sunday at 00:00 UTC
+    - cron: "0 0 * * 0"
+
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: linux-amd64
+    container:
+      image: docker:cli
+
+    steps:
+      - name: Install dependencies
+        run: |
+          apk add --no-cache \
+            nodejs \
+            npm \
+            git \
+            bash \
+            ca-certificates \
+            curl \
+            jq
+
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Generate Tags
+        run: chmod +x ./tag.sh && ./tag.sh && cat env >> $GITHUB_ENV
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: docker.io
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
+
+      - name: Build and Publish
+        uses: docker/bake-action@v3
+        with:
+          push: true
+          no-cache: true
+          pull: true
+          cleanup: true
+          keep-state: false
+          targets: default
+
