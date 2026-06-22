@@ -57,3 +57,7 @@ jobs:
           keep-state: false
           targets: default
 
+      - name: Clean Up
+        if: always() 
+        run: docker system prune -af --volumes
+
