@@ -1,7 +1,7 @@
-variable "FRP_VER" {
+variable "FRP_TAG" {
 }
 
-variable "FRP_URL" {
+variable "FRP_TAG_LATEST" {
 }
 
 group "default" {
@@ -12,13 +12,13 @@ target "frp" {
   context    = "."
   dockerfile = "Dockerfile"
 
-  args = {
-    FRP_VER = FRP_VER
-    FRP_URL = FRP_URL
-  }
+  platforms = [
+    "linux/amd64",
+    "linux/arm64"
+  ]
 
   tags = [
-    "docker.io/quackerd/frp:${FRP_VER}",
-    "docker.io/quackerd/frp:latest"
+    FRP_TAG,
+    FRP_TAG_LATEST
   ]
 }
