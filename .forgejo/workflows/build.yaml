@@ -19,7 +19,7 @@ jobs:
   build:
     container:
       image: docker:cli
-    runs-on: linux/earm64
+    runs-on: linux-earm64
 
     steps:
       - name: Install dependencies
