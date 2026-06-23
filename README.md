@@ -2,7 +2,7 @@
 
 [![build](https://git.quacker.org/d/docker-frp/badges/workflows/build.yaml/badge.svg?branch=master&label=build)](https://git.quacker.org/d/docker-frp/actions)
 [![amd64](https://img.shields.io/docker/image-size/quackerd/frp/latest?arch=amd64&label=amd64)](https://hub.docker.com/r/quackerd/frp)
-[![aarch64](https://img.shields.io/docker/image-size/quackerd/frp/latest?arch=arm64&label=arm64)](https://hub.docker.com/r/quackerd/frp)
+[![aarch64](https://img.shields.io/docker/image-size/quackerd/frp/latest?arch=arm64&label=aarch64)](https://hub.docker.com/r/quackerd/frp)
 
 Docker image for frp. Binaries directly obtained from the official frp repo [fatedier/frp](https://github.com/fatedier/frp). Automatic weekly builds. You can start with the sample `docker-compose.yml` in this repo.
 
