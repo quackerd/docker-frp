@@ -17,9 +17,19 @@ on:
 
 jobs:
   docker:
-    runs-on: linux-amd64
     container:
       image: docker:cli
+    strategy:
+      matrix:
+        include:
+          - platform: linux/amd64
+            runner: runner/amd64
+          - platform: linux/arm64
+            runner: runner/earm64
+
+      runs-on: ${{ matrix.runner }}
+      env:
+        - FRP_ARCH: ${{ matrix.platform }}
 
     steps:
       - name: Install dependencies
@@ -53,8 +63,10 @@ jobs:
           push: true
           no-cache: true
           pull: true
-          targets: default
+          targets: frp
           source: .
+          set: |
+            frp.platforms=${{ matrix.platform }}
 
       - name: Clean Up
         if: always() 
