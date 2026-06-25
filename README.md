@@ -1,7 +1,7 @@
 # docker-frp
 
 [![build](https://git.quacker.org/d/docker-frp/badges/workflows/build.yaml/badge.svg?branch=master&label=build)](https://git.quacker.org/d/docker-frp/actions)
-[![frp version](https://img.shields.io/docker/v/quackerd/frp?sort=semver&label=frp%20version)](https://git.quacker.org/d/docker-frp/actions)
+[![frp version](https://img.shields.io/docker/v/quackerd/frp?sort=semver&label=frp%20version)](https://hub.docker.com/r/quackerd/frp)
 [![amd64](https://img.shields.io/docker/image-size/quackerd/frp/latest?arch=amd64&label=amd64)](https://hub.docker.com/r/quackerd/frp)
 [![aarch64](https://img.shields.io/docker/image-size/quackerd/frp/latest?arch=arm64&label=aarch64)](https://hub.docker.com/r/quackerd/frp)
 
